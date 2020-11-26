@@ -1,0 +1,97 @@
+% Encoding: UTF-8
+
+@Inbook{Taly2016,
+author="Taly, Ankur
+and Shankar, Asim",
+editor="Aldini, Alessandro
+and Lopez, Javier
+and Martinelli, Fabio",
+title="Distributed Authorization in Vanadium",
+bookTitle="Foundations of Security Analysis and Design VIII: FOSAD 2014/2015/2016 Tutorial Lectures",
+year="2016",
+publisher="Springer International Publishing",
+address="Cham",
+pages="139--162",
+abstract="In this tutorial, we present an authorization model for distributed systems that operate with limited internet connectivity. Reliable internet access remains a luxury for a majority of the world's population. Even for those who can afford it, a dependence on internet connectivity may lead to sub-optimal user experiences. With a focus on decentralized deployment, we present an authorization model that is suitable for scenarios where devices right next to each other (such as a sensor or a friend's phone) should be able to communicate securely in a peer-to-peer manner. The model has been deployed as part of an open-source distributed application framework called Vanadium. As part of this tutorial, we survey some of the key ideas and techniques used in distributed authorization, and explain how they are combined in the design of our model.",
+isbn="978-3-319-43005-8",
+doi="10.1007/978-3-319-43005-8_4",
+url="https://doi.org/10.1007/978-3-319-43005-8_4"
+}
+
+@InProceedings{10.1007/978-3-319-45741-3_16,
+author="Wu, David J.
+and Taly, Ankur
+and Shankar, Asim
+and Boneh, Dan",
+editor="Askoxylakis, Ioannis
+and Ioannidis, Sotiris
+and Katsikas, Sokratis
+and Meadows, Catherine",
+title="Privacy, Discovery, and Authentication for the Internet of Things",
+booktitle="Computer Security -- ESORICS 2016",
+year="2016",
+publisher="Springer International Publishing",
+address="Cham",
+pages="301--319",
+abstract="Automatic service discovery is essential to realizing the full potential of the Internet of Things (IoT). While discovery protocols like Multicast DNS, Apple AirDrop, and Bluetooth Low Energy have gained widespread adoption across both IoT and mobile devices, most of these protocols do not offer any form of privacy control for the service, and often leak sensitive information such as service type, device hostname, device owner's identity, and more in the clear.",
+isbn="978-3-319-45741-3"
+}
+
+@INPROCEEDINGS{6839375,  author={J. {Lee} and W. {Lin} and Y. {Huang}},  booktitle={2014 International Symposium on Next-Generation Electronics (ISNE)},   title={A lightweight authentication protocol for Internet of Things},   year={2014},  volume={},  number={},  pages={1-2},  doi={10.1109/ISNE.2014.6839375}}
+
+@inproceedings{10.1145/2463183.2463193,
+author = {Hummen, Ren\'{e} and Ziegeldorf, Jan H. and Shafagh, Hossein and Raza, Shahid and Wehrle, Klaus},
+title = {Towards Viable Certificate-Based Authentication for the Internet of Things},
+year = {2013},
+isbn = {9781450320030},
+publisher = {Association for Computing Machinery},
+address = {New York, NY, USA},
+url = {https://doi.org/10.1145/2463183.2463193},
+doi = {10.1145/2463183.2463193},
+booktitle = {Proceedings of the 2nd ACM Workshop on Hot Topics on Wireless Network Security and Privacy},
+pages = {37–42},
+numpages = {6},
+keywords = {certificates, internet of things, authentication, tls},
+location = {Budapest, Hungary},
+series = {HotWiSec '13}
+}
+
+@article{article,
+author = {Ferrag, Mohamed Amine and Maglaras, Leandros and Janicke, Helge and Jiang, Jianmin and Shu, Lei},
+year = {2017},
+month = {09},
+pages = {},
+title = {Authentication Protocols for Internet of Things: A Comprehensive Survey},
+volume = {2017},
+journal = {Security and Communication Networks},
+doi = {10.1155/2017/6562953}
+}
+
+@ARTICLE{8057722,  author={H. {Kim} and E. A. {Lee}},  journal={IT Professional},   title={Authentication and Authorization for the Internet of Things},   year={2017},  volume={19},  number={5},  pages={27-33},  doi={10.1109/MITP.2017.3680960}}
+
+@article{Ramos2013DistributedCA,
+  title={Distributed Capability-based Access Control for the Internet of Things},
+  author={J. H. Ramos and A. Jara and L. Mar{\'i}n and A. F. G{\'o}mez-Skarmeta},
+  journal={J. Internet Serv. Inf. Secur.},
+  year={2013},
+  volume={3},
+  pages={1-16}
+}
+
+@article{72df67ac3ea541da8cf0523c6f71bbf2,
+title = "Identity Authentication and Capability Based Access Control (IACAC) for the Internet of Things",
+keywords = "access control , authentication, capability, Internet of Things",
+author = "Mahalle, {Parikshit N.} and Bayu Anggorojati and Prasad, {Neeli R.} and Ramjee Prasad",
+year = "2013",
+month = mar,
+day = "10",
+language = "English",
+volume = "1",
+pages = "309--348",
+journal = "Journal of Cyber Security and Mobility",
+issn = "2245-1439",
+publisher = "River Publishers",
+number = "4",
+}
+
+@Comment{jabref-meta: databaseType:bibtex;}
