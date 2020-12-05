@@ -1,0 +1,8 @@
+
+package chat
+
+// Chat is the interface to a p2p chat service.
+type Chat interface {
+  // SendMessage sends a message to a user.
+  SendMessage(msg string) error
+}
