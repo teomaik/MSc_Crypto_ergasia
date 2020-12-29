@@ -23,10 +23,10 @@ var _ = initializeVDL() // Must be first; see initializeVDL comments for details
 // ChatClientMethods is the client interface
 // containing Chat methods.
 //
-// Chat is the interface to a Chat-telling service.
+// Chat is the interface to a Chat service.
 type ChatClientMethods interface {
 	// SendMessage sends a message to a user.
-	SendMessage(_ *context.T, Chat string, _ ...rpc.CallOpt) error
+	SendMessage(_ *context.T, msg string, _ ...rpc.CallOpt) (string, error)
 }
 
 // ChatClientStub embeds ChatClientMethods and is a
@@ -44,8 +44,8 @@ type implChatClientStub struct {
 	name string
 }
 
-func (c implChatClientStub) SendMessage(ctx *context.T, i0 string, opts ...rpc.CallOpt) (err error) {
-	err = v23.GetClient(ctx).Call(ctx, c.name, "SendMessage", []interface{}{i0}, nil, opts...)
+func (c implChatClientStub) SendMessage(ctx *context.T, i0 string, opts ...rpc.CallOpt) (o0 string, err error) {
+	err = v23.GetClient(ctx).Call(ctx, c.name, "SendMessage", []interface{}{i0}, []interface{}{&o0}, opts...)
 	return
 }
 
@@ -55,7 +55,7 @@ func (c implChatClientStub) SendMessage(ctx *context.T, i0 string, opts ...rpc.C
 // Chat is the interface to a Chat-telling service.
 type ChatServerMethods interface {
 	// SendMessage sends a message to a user.
-	SendMessage(_ *context.T, _ rpc.ServerCall, msg string) error
+	SendMessage(_ *context.T, _ rpc.ServerCall, msg string) (string, error)
 }
 
 // ChatServerStubMethods is the server interface containing
@@ -93,7 +93,7 @@ type implChatServerStub struct {
 	gs   *rpc.GlobState
 }
 
-func (s implChatServerStub) SendMessage(ctx *context.T, call rpc.ServerCall, i0 string) error {
+func (s implChatServerStub) SendMessage(ctx *context.T, call rpc.ServerCall, i0 string) (string, error) {
 	return s.impl.SendMessage(ctx, call, i0)
 }
 

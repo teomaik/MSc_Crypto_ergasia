@@ -1,16 +1,11 @@
-// Copyright 2015 The Vanadium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style
-// license that can be found in the LICENSE file.
-
-// Command fortune is a client to the Fortune interface.
 package main
 
 import (
 	"bufio"
 	"flag"
-	"fmt"
 	"log"
 	"os"
+	"strings"
 	"time"
 
 	v23 "v.io/v23"
@@ -21,8 +16,7 @@ import (
 )
 
 var (
-	name = flag.String("name", "/169.254.218.122:1446", "Name of the server to connect to")
-	msg  string
+	serverName = flag.String("serverName", "/127.0.0.1:2507", "Name of the server to connect to")
 )
 
 func main() {
@@ -30,21 +24,23 @@ func main() {
 	ctx, shutdown := v23.Init()
 	defer shutdown()
 
-	client := chat.ChatClient(*name)
+	client := chat.ChatClient(*serverName)
 
-	// Create a child context that will timeout in 60s.
+	/* Create a child context that will timeout in 60s. */
 	ctx, cancel := context.WithTimeout(ctx, time.Minute)
 	defer cancel()
 
-	reader := bufio.NewReader(os.Stdin)
-	fmt.Print("Enter text: ")
-	msg, _ := reader.ReadString('\n')
-
-	switch {
-	case msg != "":
-		err := client.SendMessage(ctx, msg)
-		if err != nil {
-			log.Panic("Error sending message: ", err)
-		}
+	for true {
+		var msg string = getInput()
+		value, _ := client.SendMessage(ctx, msg)
+		log.Printf("%v", value)
 	}
+
+}
+
+func getInput() string {
+	reader := bufio.NewReader(os.Stdin)
+	msg, _ := reader.ReadString('\n')
+	msg = strings.TrimSuffix(msg, "\n")
+	return msg
 }
