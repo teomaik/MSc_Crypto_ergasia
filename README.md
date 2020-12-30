@@ -12,7 +12,7 @@ go run v.io/x/ref/cmd/principal create --with-passphrase=false --overwrite ~/MSc
 
 ```
 go run v.io/x/ref/cmd/principal bless \
-    --v23.credentials ~/vanadium-demo/chat/server/cred/dimi \
+    --v23.credentials ~/MSc_Crypto_ergasia/vanadium-demo/chat/server/cred/dimi \
     --for=24h ~/MSc_Crypto_ergasia/vanadium-demo/chat/client/cred/teo friend:teo | \
         go run v.io/x/ref/cmd/principal \
             --v23.credentials ~/MSc_Crypto_ergasia/vanadium-demo/chat/client/cred/teo \
