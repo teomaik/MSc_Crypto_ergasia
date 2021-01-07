@@ -16,7 +16,7 @@ import (
 )
 
 var (
-	serverName = flag.String("serverName", "/127.0.0.1:2507", "Name of the server to connect to")
+	serverName = flag.String("serverName", "/169.254.46.141:5058", "Name of the server to connect to")
 )
 
 func main() {
@@ -29,6 +29,8 @@ func main() {
 	/* Create a child context that will timeout in 60s. */
 	ctx, cancel := context.WithTimeout(ctx, time.Minute)
 	defer cancel()
+
+	log.Println("Connected!\n")
 
 	for true {
 		var msg string = getInput()
